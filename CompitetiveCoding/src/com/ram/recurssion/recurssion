@@ -1,0 +1,28 @@
+Recursion:
+===========
+->base condition
+	->base condition is a smallest or biggest input of programe which exit condition of our programe
+	->base condition is checked every time by compiler if base condition is true then it will stops the 
+	  recursive function call or else it will skip the base condition
+	 ->the code inside the base condition excutes only once at when base condition is true
+->recursive function
+	->recursive function is a function which calls itself until base condition is true
+	->we have to choose our recursive function in such way that by calling recursively we have to 
+		reach the base condtion
+	->based on this recursive function we have to types of recursive function
+	->linear recursion->consits only single recursive function
+	->binary recursion
+		->consists of two or recursive function
+		->who binary recursion works?
+		ex: f(n),f(m)
+		for every f(x) x belongs to n
+		it will excutes first f(x) completly after that it will goes to f(y) y belongs to m
+	 
+->area above the recursive function
+	->if we write any code in this area it will execute the code before calling function i.e before 
+	 inserting any element in to the stack
+->area below the recursive function
+	->if we write any code in this area it will execute the code after calling function i.e while
+	   termination function or while removing of any element from the stack.
+if problem can be solved by using loops it can be solved by using recursion even more complex problems can be solved by recursion that not
+can be solved by loops.

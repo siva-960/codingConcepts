@@ -1,0 +1,37 @@
+Difference between String String Buffer and String Builder:
+============================================================
+String:
+=========
+ String is imutable i.e once object created it cannot be changed if we change it will create new object
+ StringBuffer is mutable object i.e if we make any changes it change in existing object only but not creates any new object 
+ 
+ Difference between == operator and .equals()
+ ============================================
+ == operator always meant for reference comparision i.e if two objects pointing to same reference so that it returns true 
+ 
+ 
+ every class is child class of Object class
+ ->by default .equals() of object class is  meant for reference/address  comparision
+ ->String class override the object class .equals() and makes it content comparision
+ ->StringBuffer simply inherit but not override the .equals() method so it is content/address comparision
+ 
+ 
+ =>heap and String Constant pool memory(scp):
+ ==============================================
+ ->String object is created in two areas
+ 
+ ex: String st=new String("ram");
+ 
+ 
+ 
+heap=> st->"ram"     scp=> "ram"
+
+in the above for "ram" literal one object is created in heap area and one object is created in scp area for future purpose and implicitly jvm maintaince one reference variable
+if we create same String literal with same content it will refere to to already existing literal
+
+
+
+String s=new String("ram")//s=>"ram" is created in heap and "ram" is created in scp
+String s1=new String("ram")//s1=>"ram" is created in heap and it compares the content of already existing object if equals doesn't created new object and points to the same object
+String s2="ram"=> points to scp object
+String s3="ram" => points to scp object
