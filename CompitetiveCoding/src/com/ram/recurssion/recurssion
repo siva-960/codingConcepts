@@ -1,7 +1,7 @@
 Recursion:
 ===========
 ->base condition
-	->base condition is a smallest or biggest input of programe which exit condition of our programe
+	->base condition is a smallest or biggest input of programe which is  exit condition of our programe
 	->base condition is checked every time by compiler if base condition is true then it will stops the 
 	  recursive function call or else it will skip the base condition
 	 ->the code inside the base condition excutes only once at when base condition is true

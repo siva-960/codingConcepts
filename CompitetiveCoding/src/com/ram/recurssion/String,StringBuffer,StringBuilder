@@ -2,7 +2,7 @@ Difference between String String Buffer and String Builder:
 ============================================================
 String:
 =========
- String is imutable i.e once object created it cannot be changed if we change it will create new object
+ String is immutable i.e once object created it cannot be changed if we change it will create new object
  StringBuffer is mutable object i.e if we make any changes it change in existing object only but not creates any new object 
  
  Difference between == operator and .equals()
@@ -35,3 +35,122 @@ String s=new String("ram")//s=>"ram" is created in heap and "ram" is created in 
 String s1=new String("ram")//s1=>"ram" is created in heap and it compares the content of already existing object if equals doesn't created new object and points to the same object
 String s2="ram"=> points to scp object
 String s3="ram" => points to scp object
+====================================================
+
+why scp concept is availibiale only for String?
+->String is the mostly commonly used object but not Stringbuffer and String and StringBuilder
+why immutable concept required for String?
+->because of scp if we create multiple objects with same content it may
+reflect to the other objects due to this they introduced the String imtable concept 
+->in StringBuffer there is no reusing concept like scp thats y not required any immutable concept 
+=>All wrapper class objects are immutable 
+
+ 
+String API:
+======================================
+String class Constructor:
+=========================
+String s=new String()//creates an empty String object
+String s=new String(String literal)//String object created in heap area with given String literal
+String s=new String(StringBuffer sb)//for the given StringBuffere object eqivalent String object created
+String s=new String(StringBuilder sb)//for the given StringBuilder equivalent String object is created 
+String s=new String(char[] ch)//for the given char array String object is created 
+String s=new String(byte[] ch) 
+Byte b={'97','98','99'}
+String s=new String(b)
+sop(s)// abc
+
+String class methods :
+=======================
+public char charAt(int index)
+public String concat(String s)
+public boolean equals(object o)=>content comparision
+public boolean equalsIgnoreCase(String s)//to check equality where case ignore
+public boolean isEmpty()//to check wether the String is empty or not 
+public int length()//to check length of the string 
+public String replace(char old,char new)
+public String substring(int begin)
+public String substring(int begin,int end)//return substring from begins to end-1
+public int indexOf(char ch)// returns index of specified character if character not exist then it returns -1
+public int lastIndexOf(char ch)//returns index of last occurence of character 
+public String toLowerCase()
+public String toUpperCase()
+public String trim()// removes the spaces the front and end of the string 
+
+
+Creation of our own immutable classes:
+========================================
+->once object created we are not able to change the content of the object
+->if may change the content new object will created with new content 
+
+======================================
+final vs immutable:
+===================
+->class Test
+{
+	public static void main(String [] args)
+	{
+		final StringBuffer sb=new StringBuffer("ram"); 
+		sb.append("siva");
+		sop(sb);//ramsiva 
+	}
+}
+
+even we declared it as final we can able change so there is no immutable nature
+->but we can't reassign to the other variables 
+
+->final concept talks about variable but not abject
+->immutable talks about object but not variable 
+===================================================================
+
+							StringBuffer:
+							=============
+->if the content is fixed and will not change at runtime then we can choose String
+->if the content is not fixed and keep on changing at runtime better to choose StringBuffer class
+
+StringBuffer Constructors:
+==========================
+=>length=>number characters in String
+=>capacity=>how many number of characters can it hold 
+StringBuffer sb=new StringBuffer();//default initial capacity is 16
+new capacity=(current capacity+1)*2
+StringBuffer sb=new StringBuffer(int initialCapacity)
+StringBuffer sb=new StringBuffer(String s);//for the given String an equivalent String is creates with capacity=Str.length()+16
+
+methods of StringBuffer:
+========================
+->public int length()// returns the count of characters in String
+->public int capacity()//returns the number of characters it can hold
+->public char charAt(int index)//returns character of specified index
+->public void setCharAt(int index,char ch); 
+->public StringBuffer append(String s)
+						append(byte b)
+						append(int i)
+						append(long l)..............any type can be used
+->public StringBuffer insert(int index, String s)
+->public StringBuffer delete(int begin,int end)
+->public StringBuffer deleteCharAt(int index);
+->public StringBuffer reverse();
+->public void setLength(int length)
+->public void ensureCapacity(int capacity)
+->public void trimToSize()
+
+
+=============================================================
+
+							StringBuilder
+							=============
+->StringBuffer and StringBuffer methods are synchronized due to this performance going to be down
+->we can overcome this by using StringBuilder
+->difference b/w String buffer and StringBuilder
+->most of the methods present inside StringBufffer is Synchronized      ->no methods are synchronized in StringBuilder
+=>at a time only one thread is allowed to operate on StringBuffer		->At a time multiple threads can operate on StringBuilder object
+object so it is thread safe													so it is Thread safe
+
+
+
+
+===============================================================
+
+
+
