@@ -5,6 +5,8 @@ Recursion:
 	->base condition is checked every time by compiler if base condition is true then it will stops the 
 	  recursive function call or else it will skip the base condition
 	 ->the code inside the base condition excutes only once at when base condition is true
+	 ->there may be multiple base conditions for single recursion problem
+	 ->if any base condition is true then recursive call exits
 ->recursive function
 	->recursive function is a function which calls itself until base condition is true
 	->we have to choose our recursive function in such way that by calling recursively we have to 
@@ -13,7 +15,7 @@ Recursion:
 	->linear recursion->consits only single recursive function
 	->binary recursion
 		->consists of two or recursive function
-		->who binary recursion works?
+		->how binary recursion works?
 		ex: f(n),f(m)
 		for every f(x) x belongs to n
 		it will excutes first f(x) completly after that it will goes to f(y) y belongs to m
@@ -26,3 +28,19 @@ Recursion:
 	   termination function or while removing of any element from the stack.
 if problem can be solved by using loops it can be solved by using recursion even more complex problems can be solved by recursion that not
 can be solved by loops.
+
+problems on recursion 
+==========================
+1.factorial
+2.recursive sum
+3.reverse of string
+4.sum of digits
+5.reverse number
+5.pattern printing
+	*
+	* *
+	* * *
+	* * * *
+6.fibanacii sequence
+7.check if a given string palindrone or not
+8.sort an array using recursion
